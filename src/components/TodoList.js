@@ -1,12 +1,17 @@
 import React from "react";
-function TodoList({ todo, handleTodo, setTodosList }) {
+
+function TodoList({ todos, handleComplete }) {
   return (
-    <li>
-      {todo.todo}
-      {!todo.completed && (
-        <button onClick={() => handleTodo(todo, setTodosList)}>Complete</button>
-      )}
-    </li>
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.todo}>
+          {todo.todo}
+          {!todo.completed && (
+            <button onClick={() => handleComplete(todo.todo)}>Complete</button>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 }
 
