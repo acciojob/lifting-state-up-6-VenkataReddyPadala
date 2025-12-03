@@ -7,7 +7,7 @@ function TodoList({ todos, handleComplete }) {
         <li key={index}>
           {todo.todo}
           {!todo.completed && (
-            <button onClick={() => handleComplete(index)}>complete</button>
+            <button onClick={() => handleComplete(index)}>Complete</button>
           )}
         </li>
       ))}
