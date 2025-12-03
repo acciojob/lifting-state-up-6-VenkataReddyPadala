@@ -9,16 +9,14 @@ const App = () => {
     { todo: "Deploy the React app", completed: false },
   ]);
 
-  const handleComplete = (todoText) => {
+  const handleComplete = (index) => {
     setTodos((prevTodos) =>
-      prevTodos.map((t) =>
-        t.todo === todoText ? { ...t, completed: true } : t
-      )
+      prevTodos.map((t, i) => (i === index ? { ...t, completed: true } : t))
     );
   };
 
   return (
-    <div>
+    <div id="main">
       <TodoList todos={todos} handleComplete={handleComplete} />
     </div>
   );

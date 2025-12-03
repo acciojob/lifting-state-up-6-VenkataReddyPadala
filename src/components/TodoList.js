@@ -3,11 +3,11 @@ import React from "react";
 function TodoList({ todos, handleComplete }) {
   return (
     <ul>
-      {todos.map((todo) => (
-        <li key={todo.todo}>
+      {todos.map((todo, index) => (
+        <li key={index}>
           {todo.todo}
           {!todo.completed && (
-            <button onClick={() => handleComplete(todo.todo)}>Complete</button>
+            <button onClick={() => handleComplete(index)}>complete</button>
           )}
         </li>
       ))}
